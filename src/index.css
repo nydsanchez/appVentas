@@ -38,6 +38,8 @@ body {
   font-family: "Roboto", sans-serif;
   background: var(--color-grey-light-2);
   min-height: 100vh;
+  font-size: var(--default-font-size);
+  color: var(--color-black);
 }
 header {
   display: flex;
@@ -78,4 +80,14 @@ h1 {
   display: flex;
   list-style: none;
   gap: 1rem;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  height: 60vh;
+  margin: 10rem auto;
+}
+
+.table_frame {
 }
