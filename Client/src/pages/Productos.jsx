@@ -23,7 +23,7 @@ const EMPTY_PRODUCT = {
 function Productos() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // ⬅️ Activamos manejo de error
+  const [error, setError] = useState(null);
 
   // Estados para controlar el modal
   const [displayModal, setDisplayModal] = useState(false);
@@ -130,9 +130,6 @@ function Productos() {
     }
   };
 
-  // --- RENDERING ---
-
-  // Columna de Acciones (llama a las funciones de control)
   const actionBodyTemplate = (rowData) => {
     return (
       <div className="p-d-flex p-jc-end">
@@ -159,7 +156,7 @@ function Productos() {
         label="Nuevo producto"
         className="p-button-outlined p-button-info p-mr-1 p-2 mt-2"
         style={{ borderRadius: "6px" }}
-        onClick={newProduct} // ⬅️ Creación
+        onClick={newProduct}
       />
     </div>
   );

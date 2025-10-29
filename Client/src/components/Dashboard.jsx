@@ -40,10 +40,9 @@ function Dashboard() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVentaData(mockVentas);
-      console.log("Datos de ventas cargados:", mockVentas);
+      // setLoading(false);
     }, 500);
 
-    // Limpieza en caso de que el componente se desmonte antes del timeout
     return () => clearTimeout(timer);
   }, []);
 
