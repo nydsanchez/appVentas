@@ -107,7 +107,7 @@ h1 {
 }
 
 .p-datatable-tbody > tr:nth-child(even) {
-  background-color: var(--color-primary-light) !important;
+  background-color: #0ba5e9 !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {

@@ -90,7 +90,8 @@ function Productos() {
       <h2 className="p-m-0">Productos</h2>
       <Button
         label="Nuevo producto"
-        className="p-button-rounded p-button-primary p-mr-1 p-2 mt-2"
+        className="p-button-outlined p-button-info p-mr-1 p-2 mt-2"
+        style={{ borderRadius: "6px" }}
         onClick={() => newProduct()}
       />
     </div>
