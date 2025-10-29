@@ -1,26 +1,6 @@
 import { Card } from "primereact/card";
-//import { Chart } from "react-chartjs-2";
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-
 import { Chart } from "react-chartjs-2";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import ChartJS from "chart.js/auto";
 
 function TopProductsChart({ topProductos = [] }) {
   // 1. PREPARACIÓN DE DATOS PARA EL GRÁFICO
