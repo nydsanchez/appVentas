@@ -12,15 +12,35 @@ const API_URL = "http://192.168.10.100:8080/api/productos";
 function Productos() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [displayEditDialog, setDisplayEditDialog] = useState(false);
+  const [displayModal, setDisplayModal] = useState(false);
   const [productToEdit, setProductToEdit] = useState(null);
   //const [error, setError] = useState(null);
 
-  const openEditDialog = (product) => {};
+  const openEditDialog = (product) => {
+    console.log(product);
+    alert(
+      `Acaba de seleccionar el producto: ${
+        product.nombre || product.name || product.id
+      }`
+    );
+  };
+
+  const newProduct = () => {
+    console.log("abrira un form");
+  };
 
   const closeEditDialog = () => {};
 
-  const handleDelete = (product) => {};
+  const handleDelete = (product) => {
+    let isdeleted = confirm(
+      `Esta seguro de eliminar el producto: ${product.id}`
+    );
+
+    if (isdeleted) {
+      console.log(`se borró el producto ${product.nombre}`);
+      console.log(product);
+    }
+  };
 
   const actionBodyTemplate = (rowData) => {
     return (
@@ -68,6 +88,11 @@ function Productos() {
   const header = (
     <div className="p-d-flex p-jc-between p-ai-center u-margin-bottom-small u-margin-top-small u-bg-white">
       <h2 className="p-m-0">Productos</h2>
+      <Button
+        label="Nuevo producto"
+        className="p-button-rounded p-button-primary p-mr-1 p-2 mt-2"
+        onClick={() => newProduct()}
+      />
     </div>
   );
 
@@ -88,13 +113,10 @@ function Productos() {
         header={header}
         dataKey="id"
         loading={loading}
-        // === Puntos de Evaluación ===
         paginator
         rows={10}
         rowsPerPageOptions={[5, 10, 25]}
-        filterDisplay="row" // Habilita los filtros en cada columna
-        // ============================
-
+        filterDisplay="row"
         className="tabla-full-width"
         emptyMessage="No se han registrado productos."
       >
@@ -131,7 +153,7 @@ function Productos() {
         />
         <Column
           header="Acciones"
-          body={actionBodyTemplate} // <-- ¡Aquí se usa el cuerpo personalizado!
+          body={actionBodyTemplate}
           exportable={false}
           style={{ minWidth: "10rem" }}
           className="text-center"
