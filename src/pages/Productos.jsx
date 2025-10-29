@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Card } from "primereact/card";
+import { Button } from "primereact/button";
+import { Dialog } from "primereact/dialog";
 import { mockProductos } from "../api/productos";
 
 const API_URL = "http://192.168.10.100:8080/api/productos";
@@ -10,7 +12,34 @@ const API_URL = "http://192.168.10.100:8080/api/productos";
 function Productos() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [displayEditDialog, setDisplayEditDialog] = useState(false);
+  const [productToEdit, setProductToEdit] = useState(null);
   //const [error, setError] = useState(null);
+
+  const openEditDialog = (product) => {};
+
+  const closeEditDialog = () => {};
+
+  const handleDelete = (product) => {};
+
+  const actionBodyTemplate = (rowData) => {
+    return (
+      <div className="p-d-flex p-jc-end">
+        <Button
+          icon="pi pi-pencil" // Icono para editar
+          className="p-button-rounded p-button-success p-mr-1"
+          onClick={() => openEditDialog(rowData)}
+          tooltip="Ver Detalles / Editar"
+        />
+        <Button
+          icon="pi pi-trash" // Icono para eliminar
+          className="p-button-rounded p-button-danger"
+          onClick={() => handleDelete(rowData)}
+          tooltip="Eliminar Producto"
+        />
+      </div>
+    );
+  };
 
   /*useEffect(() => {
     const getProducts = async () => {
@@ -98,6 +127,13 @@ function Productos() {
           sortable
           filter
           filterPlaceholder="filtrar por cantidad"
+          className="text-center"
+        />
+        <Column
+          header="Acciones"
+          body={actionBodyTemplate} // <-- ¡Aquí se usa el cuerpo personalizado!
+          exportable={false}
+          style={{ minWidth: "10rem" }}
           className="text-center"
         />
       </DataTable>
