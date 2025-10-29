@@ -10,7 +10,7 @@
   --color-secondary: #fff;
 
   --color-grey-light-1: #efefef;
-  --color-grey-light-2: #b4b4b4;
+  --color-grey-light-2: #f7f7f7;
 
   --color-grey-dark: #626262;
   --color-grey-dark-2: #464646;
@@ -107,7 +107,7 @@ h1 {
 }
 
 .p-datatable-tbody > tr:nth-child(even) {
-  background-color: #0ba5e9 !important;
+  background-color: var(--color-grey-light-2) !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {
@@ -124,10 +124,22 @@ h1 {
 
 .p-datatable .p-datatable-tbody > tr > td {
   font-size: 1.3rem !important;
+  padding-bottom: 0.3rem !important;
+}
+
+.p-datatable-tbody > tr > td {
+  /* Aumenta el padding en las 4 direcciones */
+  padding: 1rem 0.5rem !important;
 }
 
 .p-datatable .p-datatable-header {
   background-color: var(--color-secondary);
+}
+
+.p-dropdown-label {
+  position: relative;
+  top: 30%;
+  left: 5%;
 }
 /* CLASES UTILITARIAS */
 
