@@ -84,8 +84,8 @@ h1 {
 
 .container {
   display: flex;
-  width: 80%;
-  height: 60vh;
+  width: 40%;
+  height: auto;
   margin: 10rem auto;
 }
 
@@ -149,10 +149,58 @@ h1 {
 .p-paginator {
   height: 5rem;
 }
+/* -----------------------------------------------------------------
+   CLASES AUXILIARES PARA DASHBOARD (80% vs 20%)
+   ----------------------------------------------------------------- */
+
+/* Contenedor Principal: Usa Flexbox para la distribución horizontal */
+.data-ventas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Columna del Gráfico: Ocupa el 80% de ancho */
+.chart-col {
+  flex: 0 0 80%;
+  height: 50vh;
+}
+
+/* Columna de Estadísticas: Ocupa el 20% de ancho y apila las tarjetas */
+.stats-col {
+  flex: 0 0 calc(20% - 1rem);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Contenedor de cada Tarjeta Estadística: Ocupa el 50% de la columna */
+.stat-item {
+  padding-top: 2rem;
+  height: 70%;
+  box-sizing: border-box;
+}
+
+/* Responsividad: En pantallas pequeñas, todo ocupa el 100% de ancho */
+@media (max-width: 992px) {
+  .chart-col,
+  .stats-col {
+    flex: 0 0 100%;
+    height: auto;
+    gap: 0;
+  }
+}
+
 /* CLASES UTILITARIAS */
 
 .u-center-text {
   text-align: center !important;
+}
+.u-pm {
+  padding-top: 2rem;
 }
 
 .u-margin-bottom-small {
@@ -186,6 +234,10 @@ h1 {
 .u-margin-left-small {
   margin-left: 5rem;
 }
+.p-text-hg {
+  font-size: 5rem;
+  text-align: center;
+}
 
 .u-all-width {
   width: 100%;
@@ -212,4 +264,17 @@ h1 {
 
 .u-margin-auto {
   margin: 1rem auto;
+}
+
+.u-center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.p-text-h {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
