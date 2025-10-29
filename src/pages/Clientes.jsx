@@ -54,7 +54,7 @@ function Clientes() {
   }*/
 
   return (
-    <Card className="p-shadow-1 p-p-5 u-margin-top-huge u-padding-side-small">
+    <Card className="p-shadow-1 p-p-5 u-margin-top-medium u-padding-side-small">
       <DataTable
         value={clients}
         header={header}
@@ -66,7 +66,7 @@ function Clientes() {
         rowsPerPageOptions={[5, 10, 25]}
         filterDisplay="row" // Habilita los filtros en cada columna
         // ============================
-        //tableClassName="w-full"
+
         className="tabla-full-width"
         emptyMessage="No se encontraron clientes."
       >
