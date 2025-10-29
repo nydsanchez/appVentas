@@ -141,6 +141,9 @@ h1 {
   top: 30%;
   left: 5%;
 }
+.p-paginator {
+  height: 5rem;
+}
 /* CLASES UTILITARIAS */
 
 .u-center-text {
