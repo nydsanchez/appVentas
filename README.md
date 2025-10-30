@@ -11,13 +11,14 @@ El frontend está desarrollado con React y utiliza PrimeReact y PrimeFlex para l
 
 El proyecto utiliza las siguientes dependencias clave:
 
-| Dependencias | Uso |
-| React| Biblioteca principal para la interfaz de usuario.|
-|PrimeReact & PrimeFlex:| Componentes UI y utilidades de estilo.|
-|Axios:| Cliente HTTP para el consumo de la API REST del backend.|
-|react-router-dom|: Manejo de rutas y navegación.|
-|chart.js & react-chartjs-2 & chartjs-plugin-datalabels: Utilizado para la visualización de datos en el Dashboard (Módulo de Ventas).|
-|react-modal|: Componente para la gestión de modales (formularios de CRUD).|
+| Dependencia | Uso |
+| :--- | :--- |
+| **React** | Biblioteca principal para la interfaz de usuario. |
+| **PrimeReact & PrimeFlex** | Componentes UI y utilidades de estilo. |
+| **Axios** | Cliente HTTP para el consumo de la API REST del backend. |
+| **react-router-dom** | Manejo de rutas y navegación. |
+| **chart.js, react-chartjs-2, chartjs-plugin-datalabels** | Utilizado para la visualización de datos en el Dashboard (Módulo de Ventas). |
+| **react-modal** | Componente para la gestión de modales (formularios de CRUD). |
 
 ---
 
